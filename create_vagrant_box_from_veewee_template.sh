@@ -44,14 +44,14 @@ bundle
 # Possibly cleanup last installation - needs RVM
 #------------------------------------------------------------------------------
 
-if [[ -d ./veewee ]]; then
-  cd veewee
+if [[ -d ./temp ]]; then
+  cd temp
   bundle exec vagrant destroy 2>/dev/null
   bundle exec vagrant box remove $name_of_box_to_create 2>/dev/null
   bundle exec veewee vbox destroy $name_of_box_to_create 2>/dev/null
   bundle exec veewee vbox undefine $name_of_box_to_create 2>/dev/null
   cd ..
-  rm -rf ./veewee
+  rm -rf ./temp
 fi
 
 
@@ -59,8 +59,8 @@ fi
 # # Install the vagrant box from the template
 # #------------------------------------------------------------------------------
 
-mkdir veewee
-cd veewee
+mkdir temp
+cd temp
 
 # if the iso is provided, then soft link it into the .iso folder where veewee
 # expects it to be
