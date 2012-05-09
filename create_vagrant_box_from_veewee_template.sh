@@ -9,10 +9,11 @@
 #------------------------------------------------------------------------------
 
 ruby_version="1.9.3"
-veewee_version="0.2.3"
 veewee_template_name="ubuntu-12.04-server-amd64"
-name_of_box_to_create="precise64"
 locally_saved_iso_file="`pwd`/ubuntu-12.04-server-amd64.iso"
+basebox_revision_number="v2"
+#                               | no underscore on purpose... breaks build
+name_of_box_to_create="precise64$basebox_revision_number"
 
 #------------------------------------------------------------------------------
 # RVM
