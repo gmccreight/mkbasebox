@@ -47,6 +47,7 @@ bundle
 
 if [[ -d ./temp ]]; then
   cd temp
+  #[tag:question:gem] why do we do this inside the folder?
   bundle exec vagrant destroy 2>/dev/null
   bundle exec vagrant box remove $name_of_box_to_create 2>/dev/null
   bundle exec veewee vbox destroy $name_of_box_to_create 2>/dev/null
@@ -79,4 +80,5 @@ bundle exec veewee vbox build $name_of_box_to_create
 bundle exec veewee vbox validate $name_of_box_to_create
 bundle exec vagrant package --base $name_of_box_to_create --output $name_of_box_to_create.box
 bundle exec vagrant box add $name_of_box_to_create $name_of_box_to_create.box
-rm $name_of_box_to_create.box
+
+echo you can now upload the $name_of_box_to_create.box somewhere, like to s3 for example
